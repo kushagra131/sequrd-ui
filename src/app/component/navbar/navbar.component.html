@@ -1,0 +1,43 @@
+<div class="sequrd-app-nav">
+  <nav class="sequrd-app-nav-primary">
+    <mat-toolbar role="navbar" color="primary">
+      <mat-toolbar-row>
+        <a
+          mat-mini-fab
+          type="button"
+          color="primary"
+          matTooltip="Navigate to Home"
+          routerLink="/"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          aria-label="Sequrd homepage"
+        >
+          <mat-icon>home</mat-icon>
+        </a>
+        <span class="vast-shadow-font-regular">{{ title }}</span>
+        <span class="example-spacer"></span>
+        <button
+          mat-fab extended
+          type="button"
+          color="primary"
+          aria-label="Account button"
+        >
+          <mat-icon>account_circle</mat-icon>
+          {{ login_btn_title }}
+        </button>
+        <a
+          mat-mini-fab
+          type="button"
+          color="primary"
+          matTooltip="Logout"
+          routerLink="/logout"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          aria-label="Logout button"
+        >
+          <mat-icon>logout</mat-icon>
+        </a>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </nav>
+</div>

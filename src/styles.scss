@@ -1,4 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(to left, pink, hotpink, thistle);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mat-typography {
+  font: 400 14px / 20px "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  letter-spacing: .0178571429em;
+}
