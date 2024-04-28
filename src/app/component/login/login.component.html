@@ -1,1 +1,76 @@
-<p>login works!</p>
+<div class="sequrd-app-login">
+  <mat-card class="card" appearance="raised">
+    <mat-card-header>
+      <mat-card-title class="font-comfortaa-bold-xlarge">
+        <p>Sign In</p>
+      </mat-card-title>
+    </mat-card-header>
+    <app-divider class="full-width" [color]="'primary'"></app-divider>
+    <form class="app-login-form" (submit)="submitLoginDetails()">
+      <table class="table-content">
+        <tbody>
+          <tr>
+            <td>
+              <mat-form-field color="primary" appearance="fill">
+                <mat-label>Enter your Username</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  aria-label="Enter your Username"
+                  [formControl]="username"
+                  [errorStateMatcher]="matcher"
+                />
+                @if (username.hasError('required')) {
+                <mat-error>Username is <strong>required</strong></mat-error>
+                }
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field color="primary" appearance="fill">
+                <mat-label>Enter your Password</mat-label>
+                <input
+                  type="password"
+                  matInput
+                  aria-label="Enter your Password"
+                  [type]="hide ? 'password' : 'text'"
+                  [formControl]="password"
+                />
+                @if (password.hasError('required')) {
+                <mat-error>Password is <strong>required</strong></mat-error>
+                }
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="hide = !hide"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide"
+                >
+                  <mat-icon>
+                    {{ hide ? "visibility_off" : "visibility" }}
+                  </mat-icon>
+                </button>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button
+                class="btn-width"
+                mat-fab
+                extended
+                type="submit"
+                color="primary"
+                aria-label="Sign In button"
+              >
+                <mat-icon>login</mat-icon>
+                <span class="font-comfortaa-bold-normal"> Sign In </span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </mat-card>
+</div>

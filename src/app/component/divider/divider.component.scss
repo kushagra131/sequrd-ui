@@ -1,0 +1,12 @@
+.primary {
+  width: 100%;
+  height: 2px;
+  // background: linear-gradient(to right, thistle, hotpink, mediumpurple);
+  background: linear-gradient(270deg, #4f56ff, #ff4980 83%, #ff5757);
+}
+
+.dark {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, lightgrey, black);
+}

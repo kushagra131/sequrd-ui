@@ -1,3 +1,20 @@
+.sequrd-app-body {
+  height: 100%;
+}
+
 .footer-content {
   align-items: flex-end;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.font-comfortaa-regular-normal {
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: medium;
+  letter-spacing: 0.0178571429em;
 }

@@ -1,7 +1,8 @@
-<div class="sequrd-app-nav">
-  <nav class="sequrd-app-nav-primary">
+<div class="sequrd-app-navbar">
+  <nav class="sequrd-app-navbar-primary">
     <mat-toolbar role="navbar" color="primary">
       <mat-toolbar-row>
+        @if (!hide) {
         <a
           mat-mini-fab
           type="button"
@@ -14,17 +15,21 @@
         >
           <mat-icon>home</mat-icon>
         </a>
-        <span class="vast-shadow-font-regular">{{ title }}</span>
+        }
+        <span class="font-vast-shadow-regular">SEQURD</span>
         <span class="example-spacer"></span>
+        @if (!hide) {
         <button
           mat-fab extended
           type="button"
           color="primary"
           aria-label="Account button"
+          (click)="goToLogin()"
         >
           <mat-icon>account_circle</mat-icon>
-          {{ login_btn_title }}
+          <span class="font-comfortaa-bold-normal">Sign In</span>
         </button>
+        } @if (!hide) {
         <a
           mat-mini-fab
           type="button"
@@ -37,6 +42,7 @@
         >
           <mat-icon>logout</mat-icon>
         </a>
+        }
       </mat-toolbar-row>
     </mat-toolbar>
   </nav>

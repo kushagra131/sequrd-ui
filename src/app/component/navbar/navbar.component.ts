@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import {
+  RouterOutlet,
+  RouterLink,
+  RouterLinkActive,
+  Router,
+} from '@angular/router';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
@@ -10,6 +15,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { HomeComponent } from '../home/home.component';
 import { LoginComponent } from '../login/login.component';
 import { LogoutComponent } from '../logout/logout.component';
+import { LoggerService } from '../../logger/logger.service';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -30,7 +37,25 @@ import { LogoutComponent } from '../logout/logout.component';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
-export class NavbarComponent {
-  title = 'SEQURD';
-  login_btn_title = 'Login';
+export class NavbarComponent implements OnInit {
+  protected hide: boolean | undefined;
+
+  /** Services DI */
+  private router: Router = inject(Router);
+  private logger: LoggerService = inject(LoggerService);
+  private loginService: LoginService = inject(LoginService);
+
+  constructor() {}
+
+  ngOnInit(): void {
+    this.loginService.isLogin$.subscribe({
+      next: (v) => (this.hide = v),
+      error: (e) => this.logger.log(e),
+      complete: () => this.logger.log(`Navbar Subscription Complete.`),
+    });
+  }
+
+  goToLogin() {
+    this.router.navigateByUrl('login');
+  }
 }

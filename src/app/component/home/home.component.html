@@ -1,10 +1,16 @@
-<div class="sequrd-app-main-content">
-  <mat-card class="body-content">
-    <mat-card-header class="text-content">
-      <mat-card-title class="comfortaa-bold">
-        <router-outlet></router-outlet>
+<div @cardEnterAnimation class="sequrd-app-main-content">
+  <mat-card class="card" appearance="raised">
+    <mat-card-header class="card-header">
+      <mat-card-title @cardTitleAnimation class="font-comfortaa-bold">
         <p>Welcome to</p>
-        <p>{{ title }}</p>
+        <p>
+          <span class="text-color-accent">{{ details?.title }}</span>
+        </p>
+        <p>
+          <span class="text-color-accent font-comfortaa-regular-normal">
+            {{ details?.id }}
+          </span>
+        </p>
       </mat-card-title>
     </mat-card-header>
   </mat-card>

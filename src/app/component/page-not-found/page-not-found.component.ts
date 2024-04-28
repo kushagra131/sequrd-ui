@@ -16,15 +16,9 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './page-not-found.component.scss',
 })
 export class PageNotFoundComponent {
-  protected title!: string | undefined;
-  protected details!: string | undefined;
   private router: Router = inject(Router);
+  protected title = `404. That's an error.`;
+  protected details = `The requested URL: ${this.router.url} was not found on this server.`;
 
-  constructor() {
-    this.title = "404. That's an error.";
-    this.details =
-      'The requested URL: ' +
-      this.router.url +
-      ' was not found on this server.';
-  }
+  constructor() {}
 }

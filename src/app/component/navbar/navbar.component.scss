@@ -10,9 +10,19 @@ mat-toolbar button, a {
   margin-right: 8px;
 }
 
-.vast-shadow-font-regular {
+.font-vast-shadow-regular {
   font-family: "Vast Shadow", serif;
   font-weight: 400;
   font-style: normal;
   font-size: large;
+  letter-spacing: .0178571429em;
+}
+
+.font-comfortaa-bold-normal {
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: inherit;
+  letter-spacing: .0178571429em;
 }

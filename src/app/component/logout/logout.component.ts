@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-logout',
   standalone: true,
-  imports: [],
+  imports: [MatCardModule],
   templateUrl: './logout.component.html',
-  styleUrl: './logout.component.scss'
+  styleUrl: './logout.component.scss',
 })
-export class LogoutComponent {
-
-}
+export class LogoutComponent {}

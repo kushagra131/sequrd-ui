@@ -1,0 +1,29 @@
+.sequrd-app-logout-content {
+  display: flex;
+  height: 100%;
+  margin-top: 100px;
+  justify-content: center;
+}
+
+.card {
+  align-items: center;
+  height: 50%;
+  width: 75%;
+  // background-color: snow;
+  background-color: #1d1a27;
+  border-radius: 22px;
+}
+
+.card-header {
+  margin: 10% 2% 2% 2%;
+}
+
+.font-comfortaa-bold {
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: xx-large;
+  letter-spacing: 0.0178571429em;
+  color: white;
+}
