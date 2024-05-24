@@ -50,8 +50,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.loginService.isLogin$.subscribe({
       next: (v) => (this.hide = v),
-      error: (e) => this.logger.log(e),
-      complete: () => this.logger.log(`Navbar Subscription Complete.`),
+      error: (e) => this.logger.error(e),
+      complete: () => this.logger.log(`isLogin Subscription Complete.`),
     });
   }
 

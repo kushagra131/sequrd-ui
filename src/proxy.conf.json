@@ -1,6 +1,7 @@
 {
-  "/home": {
+  "/sequrd/api/**": {
     "target": "http://localhost:9091",
-    "secure": false
+    "secure": false,
+    "logLevel": "debug"
   }
 }

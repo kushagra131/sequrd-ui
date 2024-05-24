@@ -19,6 +19,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { LoginService } from './login.service';
 import { LoggerService } from '../../logger/logger.service';
 import { DividerComponent } from '../divider/divider.component';
+import { UserDetails } from '../../interface/user-details';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -55,13 +56,14 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class LoginComponent implements OnInit, OnDestroy {
   protected hide: boolean | undefined;
   matcher = new MyErrorStateMatcher();
+  protected credentials!: UserDetails;
+
+  username = new FormControl('', [Validators.required]);
+  password = new FormControl('', [Validators.required]);
 
   /** Services DI */
   private loginService: LoginService = inject(LoginService);
   private logger: LoggerService = inject(LoggerService);
-
-  username = new FormControl('', [Validators.required]);
-  password = new FormControl('', [Validators.required]);
 
   constructor() {
     this.hide = true;
@@ -77,10 +79,11 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   submitLoginDetails() {
     if (this.username.value && this.password.value) {
-      this.loginService.submitLoginDetails(
-        this.username.value ?? '',
-        this.password.value ?? ''
-      );
+      this.credentials = {
+        username: this.username.value,
+        password: this.password.value,
+      }
+      this.loginService.submitLoginDetails(this.credentials);
     }
   }
 }

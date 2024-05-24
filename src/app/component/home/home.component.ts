@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { MatCardModule } from '@angular/material/card';
@@ -14,10 +14,10 @@ import {
   cardEnterAnimation,
   cardTitleAnimation,
 } from '../../animation/animation';
-import { HttpClient } from '@angular/common/http';
 
-import { HomeDetails } from './home-details';
 import { LoggerService } from '../../logger/logger.service';
+import { HomeService } from './home.service';
+import { HomeDetails } from '../../interface/home-details';
 
 @Component({
   selector: 'app-home',
@@ -39,19 +39,27 @@ import { LoggerService } from '../../logger/logger.service';
     ]),
   ],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   details?: HomeDetails;
 
   /** Modules & Services DI */
-  private http: HttpClient = inject(HttpClient);
   private logger: LoggerService = inject(LoggerService);
+  private service: HomeService = inject(HomeService);
 
-  constructor() {
-    this.http.get<HomeDetails>('/home').subscribe({
-      next: (resp) => { this.details = resp },
-      error: (err) => { this.logger.log(err) },
-      complete: () => { this.logger.log(`HTTP /home subscription completed.`) }
+  constructor() {}
+
+  ngOnInit(): void {
+    this.getHomeDetails();
+  }
+
+  private getHomeDetails() {
+    return this.service.getHomeDetails().subscribe({
+      next: (value) => this.details = value,
+      error: (err) => this.logger.error(err),
+      complete: () => {
+        this.logger.log(`HTTP getHomeDetails Subscription Complete.`)
+        this.logger.log(this.details)
+      },
     });
   }
-  
 }

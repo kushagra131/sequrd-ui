@@ -9,8 +9,8 @@ export class LoggerService {
   log(msg: unknown) {
     console.log(msg);
   }
-  error(msg: unknown) {
-    console.error(msg);
+  error(err: unknown) {
+    console.error(err);
   }
   warn(msg: unknown) {
     console.warn(msg);

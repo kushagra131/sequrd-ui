@@ -117,7 +117,7 @@ export const slideInRouteAnimation = trigger('routeAnimations', [
         style({ left: '100%' })) ], 
         { optional: true }
       ),
-      query('@*', animateChild(), { optional: true }),
+      query('@cardEnterAnimation', animateChild(), { optional: true }),
     ]),
   ]),
   transition('* <=> *', [

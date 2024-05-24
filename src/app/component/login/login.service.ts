@@ -1,6 +1,8 @@
 import { Injectable, inject } from '@angular/core';
-import { LoggerService } from '../../logger/logger.service';
 import { BehaviorSubject } from 'rxjs';
+
+import { LoggerService } from '../../logger/logger.service';
+import { UserDetails } from '../../interface/user-details';
 
 @Injectable({
   providedIn: 'root',
@@ -15,10 +17,8 @@ export class LoginService {
 
   constructor() {}
 
-  submitLoginDetails(username: string, password: string) {
-    this.logger.log(
-      `Login Details Received: Username: ${username}, Password: ${password}.`
-    );
+  submitLoginDetails(credentials: UserDetails) {
+    this.logger.log('Credentials: ' + JSON.stringify(credentials));
   }
 
   setIsLogin(value: boolean) {
