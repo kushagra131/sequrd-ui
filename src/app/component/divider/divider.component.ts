@@ -2,11 +2,10 @@ import { Component, Input, OnInit, inject } from '@angular/core';
 import { LoggerService } from '../../logger/logger.service';
 
 @Component({
-  selector: 'app-divider',
-  standalone: true,
-  imports: [],
-  templateUrl: './divider.component.html',
-  styleUrl: './divider.component.scss',
+    selector: 'app-divider',
+    imports: [],
+    templateUrl: './divider.component.html',
+    styleUrl: './divider.component.scss'
 })
 export class DividerComponent implements OnInit {
   @Input({ alias: 'color', transform: trimString }) style: string | undefined;

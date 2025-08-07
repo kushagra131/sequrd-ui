@@ -13,21 +13,20 @@ import { LoggerService } from './logger/logger.service';
 import { slideInRouteAnimation } from './animation/animation';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    MatCommonModule,
-    MatCardModule,
-    MatToolbarModule,
-    NavbarComponent,
-    HomeComponent,
-    ProgressBarComponent,
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  animations: [slideInRouteAnimation],
+    selector: 'app-root',
+    imports: [
+        CommonModule,
+        RouterOutlet,
+        MatCommonModule,
+        MatCardModule,
+        MatToolbarModule,
+        NavbarComponent,
+        HomeComponent,
+        ProgressBarComponent,
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    animations: [slideInRouteAnimation]
 })
 export class AppComponent {
   protected footer_content = `Sequrd Copyright 2024`;

@@ -20,24 +20,23 @@ import { HomeService } from './home.service';
 import { HomeDetails } from '../../interface/home-details';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [MatCardModule, RouterOutlet],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
-  animations: [
-    trigger('cardEnterAnimation', [
-      transition(':enter', [
-        sequence([
-          query('.card', [useAnimation(cardEnterAnimation)]),
-          query('@*', animateChild()),
+    selector: 'app-home',
+    imports: [MatCardModule, RouterOutlet],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss',
+    animations: [
+        trigger('cardEnterAnimation', [
+            transition(':enter', [
+                sequence([
+                    query('.card', [useAnimation(cardEnterAnimation)]),
+                    query('@*', animateChild()),
+                ]),
+            ]),
         ]),
-      ]),
-    ]),
-    trigger('cardTitleAnimation', [
-      transition(':enter', [useAnimation(cardTitleAnimation)]),
-    ]),
-  ],
+        trigger('cardTitleAnimation', [
+            transition(':enter', [useAnimation(cardTitleAnimation)]),
+        ]),
+    ]
 })
 export class HomeComponent implements OnInit {
   details?: HomeDetails;
