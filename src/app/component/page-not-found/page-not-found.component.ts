@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import {
-  RouterOutlet,
   RouterLink,
   RouterLinkActive,
   Router,
@@ -10,7 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-page-not-found',
-  imports: [MatCardModule, RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [MatCardModule, RouterLink, RouterLinkActive],
   templateUrl: './page-not-found.component.html',
   standalone: true,
   styleUrl: './page-not-found.component.scss'
