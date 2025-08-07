@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { ChildrenOutletContexts, RouterOutlet } from '@angular/router';
 
 import { MatCommonModule } from '@angular/material/core';
@@ -13,20 +13,19 @@ import { LoggerService } from './logger/logger.service';
 import { slideInRouteAnimation } from './animation/animation';
 
 @Component({
-    selector: 'app-root',
-    imports: [
-        CommonModule,
-        RouterOutlet,
-        MatCommonModule,
-        MatCardModule,
-        MatToolbarModule,
-        NavbarComponent,
-        HomeComponent,
-        ProgressBarComponent,
-    ],
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.scss',
-    animations: [slideInRouteAnimation]
+  selector: 'app-root',
+  imports: [
+    RouterOutlet,
+    MatCommonModule,
+    MatCardModule,
+    MatToolbarModule,
+    NavbarComponent,
+    ProgressBarComponent
+],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
+  standalone: true,
+  animations: [slideInRouteAnimation]
 })
 export class AppComponent {
   protected footer_content = `Sequrd Copyright 2024`;

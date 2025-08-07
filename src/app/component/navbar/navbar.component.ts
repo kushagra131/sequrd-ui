@@ -19,22 +19,19 @@ import { LoggerService } from '../../logger/logger.service';
 import { LoginService } from '../login/login.service';
 
 @Component({
-    selector: 'app-navbar',
-    imports: [
-        MatToolbarModule,
-        MatCardModule,
-        MatIconModule,
-        MatButtonModule,
-        MatTooltipModule,
-        RouterOutlet,
-        RouterLink,
-        RouterLinkActive,
-        HomeComponent,
-        LoginComponent,
-        LogoutComponent,
-    ],
-    templateUrl: './navbar.component.html',
-    styleUrl: './navbar.component.scss'
+  selector: 'app-navbar',
+  imports: [
+    MatToolbarModule,
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule,
+    MatTooltipModule,
+    RouterLink,
+    RouterLinkActive
+  ],
+  templateUrl: './navbar.component.html',
+  standalone: true,
+  styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent implements OnInit {
   protected hide: boolean | undefined;

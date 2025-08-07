@@ -9,10 +9,11 @@ import {
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
-    selector: 'app-page-not-found',
-    imports: [MatCardModule, RouterOutlet, RouterLink, RouterLinkActive],
-    templateUrl: './page-not-found.component.html',
-    styleUrl: './page-not-found.component.scss'
+  selector: 'app-page-not-found',
+  imports: [MatCardModule, RouterOutlet, RouterLink, RouterLinkActive],
+  templateUrl: './page-not-found.component.html',
+  standalone: true,
+  styleUrl: './page-not-found.component.scss'
 })
 export class PageNotFoundComponent {
   private router: Router = inject(Router);

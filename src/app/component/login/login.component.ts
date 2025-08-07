@@ -37,20 +37,21 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 }
 
 @Component({
-    selector: 'app-login',
-    imports: [
-        FormsModule,
-        ReactiveFormsModule,
-        MatCardModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatIconModule,
-        MatButtonModule,
-        MatDividerModule,
-        DividerComponent,
-    ],
-    templateUrl: './login.component.html',
-    styleUrl: './login.component.scss'
+  selector: 'app-login',
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDividerModule,
+    DividerComponent,
+  ],
+  templateUrl: './login.component.html',
+  standalone: true,
+  styleUrl: './login.component.scss'
 })
 export class LoginComponent implements OnInit, OnDestroy {
   protected hide: boolean | undefined;
