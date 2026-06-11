@@ -1,16 +1,16 @@
-import { Injectable, inject } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import {Injectable, inject} from '@angular/core';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
-import { LoggerService } from '../../logger/logger.service';
-import { HomeDetails } from '../../interface/home-details';
+import {LoggerService} from '../../logger/logger.service';
+import {HomeDetails} from '../../interface/home-details';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HomeService {
   /** Observables */
-  private homeDetails$!: Observable<HomeDetails>;
+  private readonly homeDetails$!: Observable<HomeDetails>;
   /** Modules & Services DI */
   private http: HttpClient = inject(HttpClient);
   private logger: LoggerService = inject(LoggerService);

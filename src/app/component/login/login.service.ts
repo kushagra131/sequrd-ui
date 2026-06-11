@@ -1,8 +1,8 @@
-import { Injectable, inject } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import {Injectable, inject} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 
-import { LoggerService } from '../../logger/logger.service';
-import { UserDetails } from '../../interface/user-details';
+import {LoggerService} from '../../logger/logger.service';
+import {UserDetails} from '../../interface/user-details';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +15,8 @@ export class LoginService {
   /** Services DI */
   private logger: LoggerService = inject(LoggerService);
 
-  constructor() {}
+  constructor() {
+  }
 
   submitLoginDetails(credentials: UserDetails) {
     this.logger.log('Credentials: ' + JSON.stringify(credentials));

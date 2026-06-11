@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-progress-bar',
@@ -9,4 +9,5 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
   standalone: true,
   styleUrl: './progress-bar.component.scss'
 })
-export class ProgressBarComponent {}
+export class ProgressBarComponent {
+}

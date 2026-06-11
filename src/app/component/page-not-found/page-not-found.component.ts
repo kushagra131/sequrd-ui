@@ -1,11 +1,11 @@
-import { Component, inject } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {
   RouterLink,
   RouterLinkActive,
   Router,
 } from '@angular/router';
 
-import { MatCardModule } from '@angular/material/card';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-page-not-found',
@@ -19,5 +19,6 @@ export class PageNotFoundComponent {
   protected title = `404. That's an error.`;
   protected details = `The requested URL: ${this.router.url} was not found on this server.`;
 
-  constructor() {}
+  constructor() {
+  }
 }

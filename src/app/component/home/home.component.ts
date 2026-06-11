@@ -1,7 +1,7 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component, OnInit, inject} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
 
-import { MatCardModule } from '@angular/material/card';
+import {MatCardModule} from '@angular/material/card';
 import {
   trigger,
   transition,
@@ -15,9 +15,9 @@ import {
   cardTitleAnimation,
 } from '../../animation/animation';
 
-import { LoggerService } from '../../logger/logger.service';
-import { HomeService } from './home.service';
-import { HomeDetails } from '../../interface/home-details';
+import {LoggerService} from '../../logger/logger.service';
+import {HomeService} from './home.service';
+import {HomeDetails} from '../../interface/home-details';
 
 @Component({
   selector: 'app-home',
@@ -46,7 +46,8 @@ export class HomeComponent implements OnInit {
   private logger: LoggerService = inject(LoggerService);
   private service: HomeService = inject(HomeService);
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.getHomeDetails();

@@ -84,66 +84,66 @@ export const cardEnterAnimation = animation([
 ]);
 
 export const cardTitleAnimation = animation([
-  style({ opacity: 0, transform: 'translateX(-100)' }),
+  style({opacity: 0, transform: 'translateX(-100)'}),
   animate(
     '2000ms cubic-bezier(0.35, 0, 0.25, 1)',
-    style({ opacity: 1, transform: 'none' })
+    style({opacity: 1, transform: 'none'})
   ),
 ]);
 
 export const slideInRouteAnimation = trigger('routeAnimations', [
   transition('HomePage <=> *', [
-    style({ position: 'relative' }),
+    style({position: 'relative'}),
     query(':enter, :leave', [
-      style({
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-      })],
-      { optional: true }
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+        })],
+      {optional: true}
     ),
-    query(':enter', [ style({ left: '-100%' }) ], { optional: true }),
-    query(':leave', animateChild(), { optional: true }),
+    query(':enter', [style({left: '-100%'})], {optional: true}),
+    query(':leave', animateChild(), {optional: true}),
     group([
-      query(':enter', [ 
-        animate('1000ms ease', 
-        style({ left: '0%' })) ], 
-        { optional: true }
+      query(':enter', [
+          animate('1000ms ease',
+            style({left: '0%'}))],
+        {optional: true}
       ),
-      query(':leave', [ 
-        animate('500ms ease-in', 
-        style({ left: '100%' })) ], 
-        { optional: true }
+      query(':leave', [
+          animate('500ms ease-in',
+            style({left: '100%'}))],
+        {optional: true}
       ),
-      query('@cardEnterAnimation', animateChild(), { optional: true }),
+      query('@cardEnterAnimation', animateChild(), {optional: true}),
     ]),
   ]),
   transition('* <=> *', [
-    style({ position: 'relative' }),
+    style({position: 'relative'}),
     query(':enter, :leave', [
-      style({
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-      })],
-      { optional: true }
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+        })],
+      {optional: true}
     ),
-    query(':enter', [ style({ left: '-100%' }) ], { optional: true }),
-    query(':leave', animateChild(), { optional: true }),
+    query(':enter', [style({left: '-100%'})], {optional: true}),
+    query(':leave', animateChild(), {optional: true}),
     group([
-      query(':enter', [ 
-        animate('1000ms ease', 
-        style({ left: '0%' })) ], 
-        { optional: true }
+      query(':enter', [
+          animate('1000ms ease',
+            style({left: '0%'}))],
+        {optional: true}
       ),
-      query(':leave', [ 
-        animate('500ms ease-in', 
-        style({ left: '100%', opacity: 0 })) ],
-        { optional: true }
+      query(':leave', [
+          animate('500ms ease-in',
+            style({left: '100%', opacity: 0}))],
+        {optional: true}
       ),
     ]),
   ]),

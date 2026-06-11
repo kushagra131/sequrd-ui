@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import {Component, OnDestroy, OnInit, inject} from '@angular/core';
 import {
   FormControl,
   FormGroupDirective,
@@ -8,18 +8,18 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { ErrorStateMatcher } from '@angular/material/core';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDividerModule } from '@angular/material/divider';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {ErrorStateMatcher} from '@angular/material/core';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
 
-import { LoginService } from './login.service';
-import { LoggerService } from '../../logger/logger.service';
-import { DividerComponent } from '../divider/divider.component';
-import { UserDetails } from '../../interface/user-details';
+import {LoginService} from './login.service';
+import {LoggerService} from '../../logger/logger.service';
+import {DividerComponent} from '../divider/divider.component';
+import {UserDetails} from '../../interface/user-details';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {

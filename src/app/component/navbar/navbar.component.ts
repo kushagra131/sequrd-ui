@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import {Component, OnDestroy, OnInit, inject} from '@angular/core';
 import {
   RouterOutlet,
   RouterLink,
@@ -6,17 +6,17 @@ import {
   Router,
 } from '@angular/router';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
-import { HomeComponent } from '../home/home.component';
-import { LoginComponent } from '../login/login.component';
-import { LogoutComponent } from '../logout/logout.component';
-import { LoggerService } from '../../logger/logger.service';
-import { LoginService } from '../login/login.service';
+import {HomeComponent} from '../home/home.component';
+import {LoginComponent} from '../login/login.component';
+import {LogoutComponent} from '../logout/logout.component';
+import {LoggerService} from '../../logger/logger.service';
+import {LoginService} from '../login/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -41,7 +41,8 @@ export class NavbarComponent implements OnInit {
   private logger: LoggerService = inject(LoggerService);
   private loginService: LoginService = inject(LoginService);
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.loginService.isLogin$.subscribe({
